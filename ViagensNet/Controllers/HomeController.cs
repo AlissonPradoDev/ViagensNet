@@ -17,14 +17,14 @@ namespace ViagensNet.Controllers
 
         public IActionResult Landing()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Pagina da Landing Page.";
 
             return View();
         }
 
         public IActionResult Checkout()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Página de Checkout.";
 
             return View();
         }
@@ -32,7 +32,7 @@ namespace ViagensNet.Controllers
 
         public IActionResult Confirmacao()
         {
-            ViewData["Message"] = "Página de Checkout.";
+            ViewData["Message"] = "Página de confirmação.";
 
             return View();
         }

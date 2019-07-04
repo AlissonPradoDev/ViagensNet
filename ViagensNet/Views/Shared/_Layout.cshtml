@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ViagensNet</title>
 
+
+
+
+
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -17,6 +22,10 @@
     </environment>
 </head>
 <body>
+
+
+
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,7 +42,7 @@
                    
                     <li><a asp-area="" asp-controller="Home" asp-action="Landing">Landing</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Checkout">Checkout</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Confimacao">Confirmação</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Confirmacao">Confirmação</a></li>
                 </ul>
             </div>
         </div>
@@ -41,6 +50,45 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div>
+            <br />
+            <div id="demo">Navegador:</div>
+            <div id="title">Título da página</div>
+            <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+
+            <script type="text/javascript">
+                var userip;
+                document.write("Seu IP é:", userip);
+
+/*Alisson Prado - dxando seu registro*/</script>
+            <p>Clique no botão abaixo para visualizar o teste feito no backend de captura</p>
+            <br />
+            <button onclick="myFunction();">  Clicar  </button>
+
+            <div onload="myFunction();"></div>
+
+
+            <script>
+                function myFunction() {
+                    var x = "Navegador usado: " + navigator.userAgent;
+                    var y = "Título do Navegador: " + document.title;
+                    document.getElementById("demo").innerHTML = x;
+                    document.getElementById("title").innerHTML = y;
+                    var userip;
+                    document.getElementById("alisson").innerHTML = userip;
+
+                }
+            </script>
+
+            <script type="text/javascript">
+                function meuArraydePost() {
+
+                    document.getElementById("alisson").innerHTML = myfunc;
+                }
+
+            </script>
+
+        </div>
         <footer>
             <p>&copy; 2019 - ViagensNet</p>
         </footer>

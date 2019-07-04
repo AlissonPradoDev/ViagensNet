@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
     <Content Remove="Views\Home\Index1.cshtml" />
     <Content Remove="wwwroot\images\001.svg" />
     <Content Remove="wwwroot\images\002.svg" />
@@ -16,6 +18,7 @@
     <Content Remove="wwwroot\images\banner4.svg" />
     <Content Remove="wwwroot\images\calendario.JPG" />
     <Content Remove="wwwroot\images\teste.JPG" />
+    <Content Remove="wwwroot\images\whatsapp.png" />
   </ItemGroup>
 
   <ItemGroup>
