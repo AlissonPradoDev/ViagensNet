@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ViagensNet</title>
 
-
-
-
-
-
+    
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -21,7 +17,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body onload="myFunction();">
 
 
 
@@ -52,44 +48,69 @@
         <hr />
         <div>
             <br />
+            <script>
+                function teste() {
+                    var x = "Navegador Utilizado:" + navigator.userAgent;
+                    var y = "Página Acessada:" +document.title;
+                    document.getElementById("demo").innerHTML = x;
+                    document.getElementById("title").innerHTML = y;
+                }
+            </script>
             <div id="demo">Navegador:</div>
             <div id="title">Título da página</div>
             <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+            <script>
+                var y = document.title;
+                document.write("Seu IP é:", userip);
+            </script>    
+
+            <br/>
+            <input TYPE="BUTTON" NAME="submit" value="Enviar" onclick="teste()">
 
             <script type="text/javascript">
+                //Ativo minhas variaveis como globai s- Há algumas formas de se fazer tentei deixar o mais simples
                 var userip;
+                var x = navigator.userAgent;
+                var y = document.title;
                 document.write("Seu IP é:", userip);
-
-/*Alisson Prado - dxando seu registro*/</script>
-            <p>Clique no botão abaixo para visualizar o teste feito no backend de captura</p>
-            <br />
-            <button onclick="myFunction();">  Clicar  </button>
-
-            <div onload="myFunction();"></div>
+                /*Alisson Prado - dxando seu registro*/
+                
 
 
-            <script>
                 function myFunction() {
-                    var x = "Navegador usado: " + navigator.userAgent;
-                    var y = "Título do Navegador: " + document.title;
+                    var x = navigator.userAgent;
+                    var y = document.title;
+
                     document.getElementById("demo").innerHTML = x;
                     document.getElementById("title").innerHTML = y;
-                    var userip;
-                    document.getElementById("alisson").innerHTML = userip;
-
-                }
-            </script>
-
-            <script type="text/javascript">
-                function meuArraydePost() {
-
-                    document.getElementById("alisson").innerHTML = myfunc;
                 }
 
-            </script>
+                function enviaGet() {
+                    location.href = 'http://localhost:53240/Home/api?tit=' + y + '&nav=' + x + '&ip=' + userip;
+
+                }
+                //Esta é uma forma bem "forçada"
+                //Mas entendo no final do projeto que poderia ter sido passado os parametro testando o POSTMAN e fazendo requisições com javascripts mais bonitas
+                //function EnviarComportamento() {
+                //var options = {};
+                //options.url = "/api/visitante/" +
+                //    $("#id").val();
+                //options.type = "PUT";   <-- estes aqui seria melhor serializado na captação da WebApi , mas também entendo que deva ser aplicada e discutida com outros programadores da empresa.
+                //options.dataType = "json";
+                //options.success = function (data) {
+                //    $("#title").val(data.firstName);
+                //    $("#navegador").val(data.lastName);
+                //    $("#identificador").val(data.city);
+                //};
+
+
+            });
+
+/**/</script>
+
 
         </div>
-        <footer>
+        <footer onload="enviaGet();">
             <p>&copy; 2019 - ViagensNet</p>
         </footer>
     </div>
