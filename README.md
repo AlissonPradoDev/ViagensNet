@@ -1,5 +1,9 @@
 # ViajaNet
-WebApi
+Pasta Final do Projeto - ViagensNet
+
+WebApi em C# com WebApi consumindo em Robot
+Dados sendo capturados em Javascript: IP, Title, Browser
+Author: Alissson Prado 
 
 Projeto Teste - Integração C# Core 2, com Javascritp de captação de Navegador , Title e IP com WebAPI REST, consumido por um Robot
 
